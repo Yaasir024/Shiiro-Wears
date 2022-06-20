@@ -54,20 +54,16 @@
               HEADWEAR
               <ul class="drop-down">
                 <RouterLink to="/store/headwear">
-                  
-                <li class="link">ALL</li>
+                  <li class="link">ALL</li>
                 </RouterLink>
                 <RouterLink to="/store/caps">
-                  
-                <li class="link">CAPS</li>
+                  <li class="link">CAPS</li>
                 </RouterLink>
                 <RouterLink to="/store/beanies">
-                  
-                <li class="link">BEANIES</li>
+                  <li class="link">BEANIES</li>
                 </RouterLink>
                 <RouterLink to="/store/hats">
-                  
-                <li class="link">HATS</li>
+                  <li class="link">HATS</li>
                 </RouterLink>
               </ul>
             </li>
@@ -78,6 +74,13 @@
             <svg class="icon search" viewBox="0 0 48 48">
               <path
                 d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"
+              ></path>
+            </svg>
+          </span>
+          <span class="hamburger-icon icon-container">
+            <svg class="icon hamburger" viewBox="0 0 24 24">
+              <path
+                d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z"
               ></path>
             </svg>
           </span>
@@ -94,6 +97,9 @@
       </div>
     </div>
   </nav>
+  <div class="mobile-menu">
+    Mobile-menu
+  </div>
 </template>
 
 <script>
@@ -185,7 +191,20 @@ ul {
   padding: 3px 3px 2px;
   cursor: pointer;
 }
+.hamburger-icon {
+  display: none;
+}
 
+
+/* Mobile menu */
 
 /* Media Query */
+@media screen and (max-width: 800px) {
+  .links-container {
+    display: none !important;
+  }
+  .hamburger-icon {
+    display: inline-block;
+  }
+}
 </style>
