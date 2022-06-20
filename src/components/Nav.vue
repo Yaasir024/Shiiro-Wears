@@ -217,6 +217,19 @@
       </div>
     </div>
   </div>
+  <div class="cart-icon">
+    <RouterLink to="/cart">
+      <div class="cart-icon-content">
+        <svg class="icon icon-bag" viewBox="0 0 64 64">
+          <g fill="none" stroke-width="2">
+            <path d="M25 26c0-15.79 3.57-20 8-20s8 4.21 8 20"></path>
+            <path d="M14.74 18h36.51l3.59 36.73h-43.7z"></path>
+          </g>
+        </svg>
+        <span class="bubble"></span>
+      </div>
+    </RouterLink>
+  </div>
 </template>
 
 <script setup>
@@ -440,11 +453,51 @@ ul {
 }
 .search-btn .icon {
   width: 25px;
-    height: 25px;
+  height: 25px;
 }
 .search-close-btn .icon {
   width: 35px;
-    height: 35px;
+  height: 35px;
+}
+
+/* Cart Icon */
+.cart-icon {
+  background: var(--color-dark);
+  max-width: 100%;
+  width: 50px;
+  color: var(--color-light);
+  padding: 7px;
+  border-radius: 50%;
+  position: fixed;
+  top: 20%;
+  right: 15px;
+  z-index: 5;
+}
+.cart-icon-content {
+  position: relative;
+}
+.cart-icon .icon {
+  color: var(--color-light);
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  vertical-align: middle;
+  fill: currentColor;
+  stroke: currentColor;
+  /* padding: 3px 3px 2px; */
+  cursor: pointer;
+}
+.cart-icon .bubble {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  width: 15px;
+  height: 15px;
+  background: #42d6b1;
+  border: 2px solid;
+  border-color: #fff;
+  border-radius: 50%;
 }
 /* Media Query */
 @media screen and (max-width: 800px) {
