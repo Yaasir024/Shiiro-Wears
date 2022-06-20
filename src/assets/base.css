@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope:300,400,500,600,700&display=swap&subset=latin-ext");
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+:root {
+  --color-dark: #000000;
+  --color-light: #ffff;
+  --border-color: #c4c4c4;
+  --border-color2: #ffffff1a;
+  --text-color: #2f2f2f;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2); */
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  position: relative;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--text-color);
+  background: var(--color-light);
+  /* background: red !important; */
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
