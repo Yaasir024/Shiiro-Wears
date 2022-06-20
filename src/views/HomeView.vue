@@ -2,6 +2,9 @@
 
 <template>
   <main>
+    <section class="banner">
+      <img src="../assets/image/banner.webp" alt="" class="banner-img" />
+    </section>
     <section class="product-section">
       <div class="title-wrapper">
         <h1 class="title">New Releases</h1>
@@ -197,6 +200,10 @@
 </template>
 
 <style scoped>
+.banner-img {
+  width: 100%;
+  object-position: center center;
+}
 .product-section {
   padding: 0 15px;
 }
