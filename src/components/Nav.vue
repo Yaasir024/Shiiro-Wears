@@ -70,14 +70,14 @@
           </ul>
         </div>
         <div class="nav-icons">
-          <span class="search-icon icon-container">
+          <span class="search-icon icon-container" @click="showSearch = true">
             <svg class="icon search" viewBox="0 0 48 48">
               <path
                 d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"
               ></path>
             </svg>
           </span>
-          <span class="hamburger-icon icon-container">
+          <span class="hamburger-icon icon-container" @click="showNav = true">
             <svg class="icon hamburger" viewBox="0 0 24 24">
               <path
                 d="M 0 4 L 0 6 L 26 6 L 26 4 Z M 0 12 L 0 14 L 26 14 L 26 12 Z M 0 20 L 0 22 L 26 22 L 26 20 Z"
@@ -97,13 +97,132 @@
       </div>
     </div>
   </nav>
-  <div class="mobile-menu">
-    Mobile-menu
+
+  <div class="mobile-menu" :class="showNav ? 'show' : 'hide'">
+    <div class="mobile-header">
+      <div class="btn-close">
+        <svg
+          @click="showNav = false"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 320 512"
+          class="icon"
+        >
+          <path
+            d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="mobile-nav-container">
+      <ul class="mobile-nav-links">
+        <li class="mobile-link menu-link_drop">
+          CLOTHING
+          <ul class="mobile-drop-down">
+            <RouterLink to="/store/shirts">
+              <li class="link">SHIRTS</li>
+            </RouterLink>
+            <RouterLink to="/store/trouser">
+              <li class="link">TROUSER</li>
+            </RouterLink>
+            <RouterLink to="/store/vest">
+              <li class="link">VEST</li>
+            </RouterLink>
+            <RouterLink to="/store/jacket">
+              <li class="link">JACKET</li>
+            </RouterLink>
+            <RouterLink to="/store/hoodie">
+              <li class="link">HOODIE</li>
+            </RouterLink>
+          </ul>
+        </li>
+        <li class="mobile-link menu-link_drop">
+          ACCESSORIES
+          <ul class="mobile-drop-down">
+            <RouterLink to="/store/accessories">
+              <li class="link">ALL</li>
+            </RouterLink>
+            <RouterLink to="/store/belt">
+              <li class="link">BELT</li>
+            </RouterLink>
+            <RouterLink to="/store/mask">
+              <li class="link">MASK</li>
+            </RouterLink>
+            <RouterLink to="/store/gloves">
+              <li class="link">GLOVES</li>
+            </RouterLink>
+          </ul>
+        </li>
+        <RouterLink to="/store/footwear">
+          <li class="link">FOOTWEAR</li>
+        </RouterLink>
+        <li class="mobile-link menu-link_drop">
+          HEADWEAR
+          <ul class="mobile-drop-down">
+            <RouterLink to="/store/headwear">
+              <li class="link">ALL</li>
+            </RouterLink>
+            <RouterLink to="/store/caps">
+              <li class="link">CAPS</li>
+            </RouterLink>
+            <RouterLink to="/store/beanies">
+              <li class="link">BEANIES</li>
+            </RouterLink>
+            <RouterLink to="/store/hats">
+              <li class="link">HATS</li>
+            </RouterLink>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="overlay"
+    :class="showNav ? 'show' : 'hide'"
+    @click="showNav = false"
+  ></div>
+
+  <div class="search-overlay" :class="showSearch ? 'show' : 'hide'">
+    <div class="search-form-container">
+      <div class="search-content">
+        <form action="" class="search-form">
+          <button type="submit" class="search-btn">
+            <span class="search-icon icon-container">
+              <svg class="icon search" viewBox="0 0 48 48">
+                <path
+                  d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"
+                ></path>
+              </svg>
+            </span>
+          </button>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search our store"
+          />
+        </form>
+        <button class="search-close-btn">
+          <div class="btn-close">
+            <svg
+              @click="showSearch = false"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="icon"
+            >
+              <path
+                d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref, reactive, onMounted } from "vue";
+const showNav = ref(false);
+const showSearch = ref(false);
 </script>
 
 <style scoped>
@@ -195,9 +314,138 @@ ul {
   display: none;
 }
 
-
 /* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  width: 300px;
+  background: var(--color-light);
+  overflow: scroll;
+  z-index: 40;
+  height: 100vh;
+  padding-bottom: 40px;
+  transition: all 0.1s ease-in-out;
+}
+.mobile-menu .mobile-header {
+  height: 70px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-close {
+  width: 1%;
+  text-align: center;
+}
+.btn-close .icon {
+  color: var(--text-color);
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  fill: currentColor;
+  padding: 3px 3px 2px;
+  cursor: pointer;
+}
 
+/* Mobile-nav */
+.mobile-nav-container {
+  padding: 0 10px;
+}
+.mobile-nav-links {
+  padding: 0;
+}
+.mobile-nav-links .link {
+  color: var(--text-color);
+  padding-left: 0;
+}
+.mobile-link {
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+.show {
+  visibility: visible;
+  translate: translateX(0px);
+  opacity: 1;
+}
+.hide {
+  visibility: hidden;
+  translate: translateX(360px);
+  opacity: 0;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.585);
+  z-index: 20;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Search */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.585);
+  z-index: 20;
+  transition: all 0.1s ease-in-out;
+}
+.search-form-container {
+  padding: 40px 0;
+  /* background: gray; */
+  background: #fff;
+  width: 100%;
+  margin-top: 60px;
+}
+.search-content {
+  display: flex;
+  flex: 1 1 100%;
+  padding: 0 20px;
+  align-items: stretch;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.search-form {
+  display: flex;
+  flex: 1 1 auto;
+}
+.search-form .search-btn {
+  padding: 0 15px 0 0;
+  background: none;
+  border: none;
+}
+.search-form .search-input {
+  border: 0;
+  width: 100px;
+  flex: 1 1 auto;
+  background: none;
+  max-width: 100%;
+  padding: 8px 10px;
+  font-size: 18px;
+  color: var(--text-color);
+}
+.search-close-btn {
+  padding: 0 15px;
+  background: none;
+  border: none;
+}
+.search-btn .icon {
+  width: 25px;
+    height: 25px;
+}
+.search-close-btn .icon {
+  width: 35px;
+    height: 35px;
+}
 /* Media Query */
 @media screen and (max-width: 800px) {
   .links-container {
