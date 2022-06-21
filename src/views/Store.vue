@@ -143,8 +143,8 @@
   </main>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { ref, reactive, onMounted } from "vue";
 </script>
 
 <style scoped>
